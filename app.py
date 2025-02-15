@@ -129,13 +129,4 @@ if not filtered_df.empty:
 else:
     st.write("No data available for the selected filters.")
 
-# -------------------------------
-# 4. Expected Outcomes (Display)
-# -------------------------------
-st.write("### Expected Outcomes")
-st.markdown("""
-- **Improved understanding** of customer spending patterns.
-- **Accurate predictions** of future credit card spending.
-- A **user-friendly dashboard** for financial institutions & individuals.
-- Potential integration with banks for **real-time forecasting** & **budget recommendations**.
-""")
+
