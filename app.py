@@ -10,7 +10,7 @@ import numpy as np
 @st.cache_data
 def load_data():
     # Update the file path as needed
-    df = pd.read_csv("credit_card_transactions.csv")
+    df = pd.read_csv("https://drive.google.com/file/d/1B91ZsneAb5lK7PUM_Eoaa3vCZEn010K5/view?usp=drive_link")
     # Rename date column if necessary and convert to datetime
     if 'trans_date_trans_time' in df.columns:
         df.rename(columns={'trans_date_trans_time': 'transaction_date'}, inplace=True)
