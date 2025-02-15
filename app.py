@@ -4,29 +4,22 @@ import matplotlib.pyplot as plt
 from prophet import Prophet
 import numpy as np
 
-import streamlit as st
-import pandas as pd
-
-# -------------------------------
-# 1. Data Loading & Caching
-# -------------------------------
 @st.cache_data
 def load_data():
-    # Correct Google Drive link format
-    file_id = "1B91ZsneAb5lK7PUM_Eoaa3vCZEn010K5"
-    url = f"https://drive.google.com/uc?id={file_id}"
-
-    # Load dataset
+    # Correct Google Drive direct link
+    url = "https://drive.google.com/uc?id=1B91ZsneAb5lK7PUM_Eoaa3vCZEn010K5"
+    
+    # Load CSV
     df = pd.read_csv(url)
 
     # Rename date column if necessary and convert to datetime
     if 'trans_date_trans_time' in df.columns:
         df.rename(columns={'trans_date_trans_time': 'transaction_date'}, inplace=True)
-
     df['transaction_date'] = pd.to_datetime(df['transaction_date'])
-    
+
     return df
 
+# Load dataset
 df = load_data()
 
 
